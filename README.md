@@ -15,9 +15,9 @@ $ docker run -p 8080:8080 -d docker-example
 56c48fc2b49b037b621bc420dc75f8c5e75a62dc2acfda7d3e95fc957057ce2a
 ```
 
-You should now be able to see the site at http://localhost:8080. Note that `56c...` is the ID for the Docker container, which will keep running until you kill it.
+You should now be able to see the site at http://localhost:8080. Note that `56c...` is the ID for the Docker container, which will keep running until you kill it. **When following these instructions, the ID for the container will be different.**
 
-To kill to, run:
+To kill it, run:
 
 ```
 $ docker container kill 56    # You don't need to type out the entire ID
@@ -34,4 +34,4 @@ $ docker container kill 56    # You don't need to type out the entire ID
 * `docker container ls`: List all running containers
 * `docker container kill [CONTAINER]`: Kill a container (^C doesn't seem to work for some reason)
 
-Demo site: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+Tutorial page: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
