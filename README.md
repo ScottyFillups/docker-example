@@ -7,6 +7,12 @@ A simple example of how to use Docker with Node.js
 
 First, make sure you have Docker installed, and have the Docker daemon running.
 
+To get started, clone the repo:
+
+```
+$ git clone https://github.com/ScottyFillups/docker-example.git
+```
+
 Now, run:
 
 ```
