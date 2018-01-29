@@ -29,15 +29,29 @@ To kill it, run:
 $ docker container kill 56    # You don't need to type out the entire ID
 ```
 
+### How to run an interative terminal inside an image
+
+```bash
+# Fire up an image in a container
+$ docker run -d --rm -it [IMAGE_ID] /bin/bash
+
+# Execute the container in an interactive terminal
+$ docker exec -it [CONTAINER_ID] /bin/bash
+```
+
+And if you're wondering, yes, you can't skim the flags. `-it` (interactive terminal) needs to be specified in both commands.
 
 ### Frequent commands
 
 * `docker --help`: I'm a noob
+* `docker [COMMAND] --help`: See above
+* `docker ps`: List all running containers
 * `docker images`: List all images
 * `docker build -t [TAG] [PATH]`: Build a docker image with a tag, once tag has been set, no need for -t
 * `docker run -p 1337:8080 -d [IMAGE]`: Run the image without tying up the terminal, and map public port 1337 to 8080
   * If you don't use `-p`, then you'll be unable to access the docker port
 * `docker container ls`: List all running containers
 * `docker container kill [CONTAINER]`: Kill a container (^C doesn't seem to work for some reason)
+* `docker pull [URL]`: Pull a docker image from a respository
 
 Tutorial page: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
