@@ -16,10 +16,12 @@ $ git clone https://github.com/ScottyFillups/docker-example.git
 Now, run:
 
 ```
-$ docker build -t docker-example .
-$ docker run -p 8080:8080 -d docker-example
+$ docker build -t $IMAGE_NAME .
+$ docker run -p 8080:8080 -d $IMAGE_NAME
 56c48fc2b49b037b621bc420dc75f8c5e75a62dc2acfda7d3e95fc957057ce2a
 ```
+
+Where `-p` specifies internal and external port bindings,and `-d` runs the container in detached mode.
 
 You should now be able to see the site at http://localhost:8080. Note that `56c...` is the ID for the Docker container, which will keep running until you kill it. **When following these instructions, the ID for the container will be different.**
 
@@ -32,14 +34,12 @@ $ docker container kill 56    # You don't need to type out the entire ID
 ### How to run an interative terminal inside an image
 
 ```bash
-# Fire up an image in a container
-$ docker run -d --rm -it [IMAGE_ID] /bin/bash
+# Build your image
+$ docker build -t $IMAGE_NAME .
 
-# Execute the container in an interactive terminal
-$ docker exec -it [CONTAINER_ID] /bin/bash
+# Run it in an interactive terminal, in bash
+$ docker run -it $IMAGE_NAME bash
 ```
-
-And if you're wondering, yes, you can't skim the flags. `-it` (interactive terminal) needs to be specified in both commands.
 
 ### Frequent commands
 
